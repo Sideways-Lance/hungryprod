@@ -88,6 +88,8 @@
       --v-theme-skin-bordered-background-overlay-multiplier: 1;
       --v-theme-skin-bordered-surface: 43,44,64;
       --v-theme-skin-bordered-surface-overlay-multiplier: 1;
+      --v-theme-white: 255,255,255;
+      --v-theme-white-overlay-multiplier: 2;
       --v-theme-skin-default-background: 0,0,0;
       --v-theme-skin-default-background-overlay-multiplier: 1;
       --v-theme-skin-default-surface: 43,44,64;
@@ -120,6 +122,7 @@
       --v-theme-on-perfect-scrollbar-thumb: 255,255,255;
       --v-theme-on-skin-bordered-background: 255,255,255;
       --v-theme-on-skin-bordered-surface: 255,255,255;
+      --v-theme-on-white: 0,0,0;
       --v-theme-on-skin-default-background: 255,255,255;
       --v-theme-on-skin-default-surface: 255,255,255;
       --v-border-color: 230, 230, 241;
@@ -243,6 +246,8 @@
       --v-theme-skin-bordered-surface-overlay-multiplier: 1;
       --v-theme-expansion-panel-text-custom-bg: 250,250,250;
       --v-theme-expansion-panel-text-custom-bg-overlay-multiplier: 1;
+      --v-theme-white: 255,255,255;
+      --v-theme-white-overlay-multiplier: 1;
       --v-theme-skin-default-background: 245,245,249;
       --v-theme-skin-default-background-overlay-multiplier: 1;
       --v-theme-skin-default-surface: 255,255,255;
@@ -276,6 +281,7 @@
       --v-theme-on-skin-bordered-background: 0,0,0;
       --v-theme-on-skin-bordered-surface: 0,0,0;
       --v-theme-on-expansion-panel-text-custom-bg: 0,0,0;
+      --v-theme-on-white: 0,0,0;
       --v-theme-on-skin-default-background: 0,0,0;
       --v-theme-on-skin-default-surface: 0,0,0;
       --v-border-color: 34, 48, 62;
@@ -397,6 +403,8 @@
       --v-theme-skin-bordered-background-overlay-multiplier: 1;
       --v-theme-skin-bordered-surface: 43,44,64;
       --v-theme-skin-bordered-surface-overlay-multiplier: 1;
+      --v-theme-white: 255,255,255;
+      --v-theme-white-overlay-multiplier: 2;
       --v-theme-skin-default-background: 0,0,0;
       --v-theme-skin-default-background-overlay-multiplier: 1;
       --v-theme-skin-default-surface: 43,44,64;
@@ -429,6 +437,7 @@
       --v-theme-on-perfect-scrollbar-thumb: 255,255,255;
       --v-theme-on-skin-bordered-background: 255,255,255;
       --v-theme-on-skin-bordered-surface: 255,255,255;
+      --v-theme-on-white: 0,0,0;
       --v-theme-on-skin-default-background: 255,255,255;
       --v-theme-on-skin-default-surface: 255,255,255;
       --v-border-color: 230, 230, 241;
@@ -654,6 +663,11 @@
       --v-theme-overlay-multiplier: var(--v-theme-expansion-panel-text-custom-bg-overlay-multiplier);
       background-color: rgb(var(--v-theme-expansion-panel-text-custom-bg)) !important;
       color: rgb(var(--v-theme-on-expansion-panel-text-custom-bg)) !important;
+    }
+    .bg-white {
+      --v-theme-overlay-multiplier: var(--v-theme-white-overlay-multiplier);
+      background-color: rgb(var(--v-theme-white)) !important;
+      color: rgb(var(--v-theme-on-white)) !important;
     }
     .bg-skin-default-background {
       --v-theme-overlay-multiplier: var(--v-theme-skin-default-background-overlay-multiplier);
@@ -920,6 +934,12 @@
     .border-expansion-panel-text-custom-bg {
       --v-border-color: var(--v-theme-expansion-panel-text-custom-bg);
     }
+    .text-white {
+      color: rgb(var(--v-theme-white)) !important;
+    }
+    .border-white {
+      --v-border-color: var(--v-theme-white);
+    }
     .text-skin-default-background {
       color: rgb(var(--v-theme-skin-default-background)) !important;
     }
@@ -1019,6 +1039,9 @@
     .on-expansion-panel-text-custom-bg {
       color: rgb(var(--v-theme-on-expansion-panel-text-custom-bg)) !important;
     }
+    .on-white {
+      color: rgb(var(--v-theme-on-white)) !important;
+    }
     .on-skin-default-background {
       color: rgb(var(--v-theme-on-skin-default-background)) !important;
     }
@@ -1035,46 +1058,50 @@
 <style>.header-title[data-v-f08be041]{font-size:clamp(3rem,5vw,6rem);line-height:clamp(3rem,5vw,6rem)}</style>
 <style>.layout-blank .misc-wrapper{align-items:center;display:flex;flex-direction:column;justify-content:center;min-block-size:calc(var(--vh, 1vh)*100);padding:1.25rem}.layout-blank .misc-avatar{z-index:1}</style>
 <style>.layout-wrapper.layout-blank{flex-direction:column}</style>
-<style>.landing-page-wrapper{background-image:url(images/Wallpaper_2.jpg);background-size:cover}.landing-page-wrapper .intro-bg{height:50vh;position:relative}.landing-page-wrapper .video-container{height:100vh;left:0;position:fixed;top:50%;transform:translateY(-50%);transition:all 1s ease;width:100%;z-index:10}.landing-page-wrapper .video-container .video-background{transition:width .3s ease;width:100%}.landing-page-wrapper .video-container.minimize{height:auto;top:0;transform:translateY(-5%)}.landing-page-wrapper .video-container.minimize .video-background{width:90vw}.landing-page-wrapper .landing-content{background-color:#000;width:100%}.landing-page-wrapper .scrollable{overflow-x:auto;padding-bottom:1rem;white-space:nowrap}.landing-page-wrapper .scrollable .v-col .v-card{height:900px}.arrow-down{animation:moveUpDown 1s ease-in-out infinite;left:50%;position:absolute;top:80%;transform:translate(-50% -50%);z-index:12}@keyframes moveUpDown{0%{top:80%}50%{top:81%}to{top:80%}}.sky{color:#67c5e0}.dawn{color:#e53e49}</style>
+<style>.landing-page-wrapper{background-image:url(images/Wallpaper_2.jpg);background-size:cover}.landing-page-wrapper .intro-bg{height:50vh;position:relative}.landing-page-wrapper .video-container{height:100vh;left:0;position:fixed;top:50%;transform:translateY(-50%);transition:all 1s ease;width:100%;z-index:10}.landing-page-wrapper .video-container .video-background{transition:width .3s ease;width:100%}.landing-page-wrapper .video-container.minimize{height:auto;top:0;transform:translateY(-5%)}.landing-page-wrapper .video-container.minimize .video-background{width:90vw}.landing-page-wrapper .landing-content{background-color:#000;width:100%}.landing-page-wrapper .scrollable{overflow-x:auto;padding-bottom:1rem;white-space:nowrap}.landing-page-wrapper .scrollable .v-col .v-card{height:900px}.arrow-down{animation:moveUpDown 1s ease-in-out infinite;left:50%;position:absolute;top:85%;transform:translate(-50% -50%);z-index:12}@keyframes moveUpDown{0%{top:85%}50%{top:86%}to{top:85%}}.sky{color:#67c5e0}.dawn{color:#e53e49}</style>
 <link rel="stylesheet" href="/hungryprod/assets/entry.D1d4OwtA.css" crossorigin>
 <link rel="stylesheet" href="/hungryprod/assets/useSkins.endbex0h.css" crossorigin>
 <link rel="stylesheet" href="/hungryprod/assets/VGrid.B47qK9tN.css" crossorigin>
-<link rel="preload" as="fetch" crossorigin="anonymous" href="/hungryprod/_payload.json?23ce68ca-9012-4ce2-91be-bff50cc27486">
-<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/B-AzJYGr.js">
-<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/C_llVBoy.js">
-<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/fdytFu7N.js">
-<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/Cd0u0imR.js">
+<link rel="stylesheet" href="/hungryprod/assets/VListItem.DjQYp-rQ.css" crossorigin>
+<link rel="stylesheet" href="/hungryprod/assets/VAvatar.BVUbnHxv.css" crossorigin>
+<link rel="preload" as="fetch" crossorigin="anonymous" href="/hungryprod/_payload.json?713c1380-02e4-4bb2-a42d-07bb43ac4f52">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/CSMtM7qk.js">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/BbdUNnkS.js">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/CgQNONnI.js">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/CcZiD559.js">
 <link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/BE2DUT4K.js">
-<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/D4hS703h.js">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/BHBSa1Sp.js">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/DQx2PPbZ.js">
+<link rel="modulepreload" as="script" crossorigin href="/hungryprod/assets/CAU4HRly.js">
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/404.CMAvSkJR.png">
-<link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VDivider.AtN51-pA.css">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VMenu.DynCXlhj.css">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/forwardRefs.QlmoXc77.css">
-<link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VList.CvkXYftj.css">
+<link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VList.Cz5CUaba.css">
+<link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VDivider.CRhg1j9w.css">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VTooltip.CybdpSdB.css">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VBadge.Cb99yl0N.css">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/B9PxTNvW.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CMgSsClm.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CmOB6aN5.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CxPTo6O5.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CkWTA7dD.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/f10qG-Xk.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/B-INBvd_.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/7ejKRGZg.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CjCexFM6.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DhRlB2vs.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/D-g5b0K1.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/epiOisDZ.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DqLp8wpJ.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/B5djLC2Y.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DLOdVEWK.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DhY_j4xC.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/xdm8F6jW.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/BVemKyFC.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DxECBi99.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/Cof-HL_r.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/s_6Kv8Vu.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CY5MwzTx.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CRXyKaFt.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/C1YZC7KH.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/XcRVjjBm.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/Bx0d9C2N.js">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/NavBarNotifications.BBUc84IW.css">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/VCard.CGxDHyvY.css">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/BTOhfrWg.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/BzbTKwM0.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DdMi6w5C.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CDE92X2A.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/msEgmdoP.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/CMIBGIUI.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DiF2QCCy.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DtAU1g7L.js">
 <link rel="prefetch" as="style" crossorigin href="/hungryprod/assets/NavbarShortcuts.DZb0Bned.css">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/BjgwLG_a.js">
-<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/BogtqK9z.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/DEl4WWi3.js">
+<link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/m5E4BJYu.js">
 <link rel="prefetch" as="script" crossorigin href="/hungryprod/assets/BbsTpSw6.js">
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/BG_HG_1_40_optimized.C2jSg5nk.png">
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/HB_HA_1.Dw8y1WXu.png">
@@ -1083,9 +1110,9 @@
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/hungry_ones.LtItHeHm.png">
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/Parallax_New.Khz3ZSCF.png">
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/The_Seeds.BGbarKZ7.png">
-<link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/Pino_1.Bqs1EhVp.png">
+<link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/Pino_2.QAN1BjTw.png">
 <link rel="prefetch" as="image" type="image/png" href="/hungryprod/assets/signature.BL5V6Z6k.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<script type="module" src="/hungryprod/assets/B-AzJYGr.js" crossorigin></script>
-<script id="unhead:payload" type="application/json">{"titleTemplate":"","title":"The Hungry Series"}</script></head><body><div id="__nuxt"><div class="v-locale-provider v-locale--is-ltr" style=""><!--[--><div class="v-application v-theme--dark v-layout v-layout--full-height v-locale--is-ltr" style="--v-global-theme-primary:105,108,255;"><div class="v-application__wrap"><!--[--><div class="layout-wrapper layout-blank" data-allow-mismatch><!--[--><div class="landing-page-wrapper position-relative"><div class="intro-bg"></div><div class="video-container d-flex justify-center align-center"><video autoplay muted loop class="video-background image-blurred-edge"><source src="/hungryprod/videos/Banner_Cosmopino_Final_Web.webm" type="video/webm"> Your browser does not support the video tag. </video><i class="bx-downvote v-icon notranslate v-theme--dark v-icon--size-default arrow-down" style="" aria-hidden="true"></i></div><div class="v-responsive v-img v-img--booting v-parallax blurred-top" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><div class="v-responsive__content"><!--[--><div class="v-container v-locale--is-ltr" style=""><div class="v-row" style=""><div class="v-col" style=""><div class="position-relative" style="height:50vh;"></div></div></div><div class="v-row" style=""><div class="v-col v-col-12 position-relative" style=""><div class="v-responsive v-img v-img--booting mx-auto" style="height:180px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div></div><div class="v-row mb-12 text-white justify-center" style=""><div class="v-col v-col-12" style=""><div style="height:100px;"></div></div><div class="v-col-lg-9 v-col-12 position-relative" style=""><h3 class="dawn mb-4">Cosmopino and the Hungry Ones – Prologue</h3><p> Earth is a miniscule plane of existence. Beyond our planet, beyond our galaxy, and further beyond the known cosmos, it all becomes incomprehensible. The universe is massive, with infinite dimensions and parallel realities well beyond human perception. Most people live their lives within their own tiny worlds. But a rare few are, through fate or chance, granted the ability to perceive beyond the ordinary. </p><div class="v-responsive v-img v-img--booting mt-2" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-row" style="margin-top:-30px;"><div class="v-col-md-7 v-col-12 pt-12" style=""><p> They are called the chosen ones. Or, more precisely, the <strong class="dawn">Hungry Ones</strong>. They are gifted cosmic seeds from the cosmic flowers - an otherworldly bloom at the heart of all the universes in the cosmos. They appear to those destined for them. Those born with the potential for cosmic sight. </p><div class="v-responsive v-img v-img--booting my-12" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div><div class="v-col-md-5 v-col-12" style=""><div class="v-responsive v-img v-img--booting" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div></div><p> But not all cosmic seeds are fated to bloom. Some live their entire lives unaware of their gift, for only a few feed the seed by nurturing their talents with dedication, turning them into something meaningful. Others will simply return to the astral plane and feed the cycle of death and rebirth into new seeds. </p><p> One of the Hungry Ones is a wandering artist named Pino, who will later come to be known as <strong class="sky">Cosmopino</strong>. </p><div class="v-responsive v-img v-img--booting my-6" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><p> At the start of this story, Pino knows nothing of the cosmos. He is an artist, a traveler who expresses his emotions through his work. He does not seek fame or fortune, nor does he have a grand purpose. He simply wants to experience life, to understand the world in his own way. </p><p><strong style="color:#ea369d;"> Then, his cosmic eyes open. </strong></p><div class="v-responsive v-img v-img--booting" style="margin-top:-10px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-row mt-6" style=""><div class="v-col-md-7 v-col-12" style=""><p> Suddenly, Pino perceives reality&#39;s true nature. He discovers he&#39;s one among many, surrounded by others carrying the same cosmic potential—humans and animals alike. </p><p> His journey expands beyond Earth, traversing civilizations and encountering beings from across the universe. Some are friendly, others terrifyingly alien. Through these experiences, Pino understands his cosmic seed is both a gift and a responsibility. </p><p> But Pino is not a warrior. He is not a scholar. He is not a messiah meant to save the universe. He is an artist. And all he wants is to see as much of the cosmos as he can. To seek inspiration, to create, and to share his art with those who may need it. </p><p class="mt-12"> This is the beginning of his legend. This is the tale of <strong class="sky">Cosmopino</strong> and the <strong class="dawn">Hungry Ones</strong>. </p></div><div class="v-col-md-5 v-col-12" style=""><div class="v-responsive v-img v-img--booting" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div></div></div></div><div class="v-responsive v-img v-img--booting mx-auto" style="height:400px;width:400px;margin-top:-20px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div><!--]--></div></div></div><!--]--></div><span></span><!--]--></div></div><!--]--></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/hungryprod/_payload.json?23ce68ca-9012-4ce2-91be-bff50cc27486">[{"state":1,"once":4,"_errors":5,"serverRendered":7,"path":8,"pinia":9,"prerenderedAt":39},["Reactive",2],{"$snuxt-i18n-meta":3},{},["Set"],["ShallowReactive",6],{},true,"/",{"layoutConfig":10,"config":26},{"appContentWidth":11,"appContentLayoutNav":13,"navbarType":15,"isNavbarBlurEnabled":17,"isVerticalNavCollapsed":18,"horizontalNavType":20,"horizontalNavPopoverOffset":21,"footerType":23,"isAppRTL":25},["Ref",12],"boxed",["Ref",14],"vertical",["Ref",16],"sticky",["Ref",7],["EmptyRef",19],"false",["Ref",16],["Ref",22],6,["Ref",24],"static",["EmptyRef",19],{"theme":27,"isVerticalNavSemiDark":29,"skin":30,"appContentWidth":32,"navbarType":33,"isNavbarBlurEnabled":34,"appContentLayoutNav":35,"isVerticalNavCollapsed":36,"footerType":37,"isAppRTL":38},["Ref",28],"dark",["EmptyRef",19],["Ref",31],"default",["Ref",12],["Ref",16],["Ref",7],["Ref",14],["EmptyRef",19],["Ref",24],["EmptyRef",19],1742856044424]</script>
-<script>window.__NUXT__={};window.__NUXT__.config={public:{i18n:{baseUrl:"",defaultLocale:"",defaultDirection:"ltr",strategy:"prefix_except_default",lazy:false,rootRedirect:"",routesNameSeparator:"___",defaultLocaleRouteNameSuffix:"default",skipSettingLocaleOnNavigate:false,differentDomains:false,trailingSlash:false,locales:[],detectBrowserLanguage:{alwaysRedirect:false,cookieCrossOrigin:false,cookieDomain:"",cookieKey:"i18n_redirected",cookieSecure:false,fallbackLocale:"",redirectOn:"root",useCookie:true},experimental:{localeDetector:"",switchLocalePathLinkSSR:false,autoImportTranslationFunctions:false,typedPages:true,typedOptionsAndMessages:false,generatedLocaleFilePathFormat:"absolute"},multiDomainLocales:false},device:{defaultUserAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36",enabled:true,refreshOnResize:false}},app:{baseURL:"/hungryprod/",buildId:"23ce68ca-9012-4ce2-91be-bff50cc27486",buildAssetsDir:"/assets/",cdnURL:""}}</script></body></html>
+<script type="module" src="/hungryprod/assets/CSMtM7qk.js" crossorigin></script>
+<script id="unhead:payload" type="application/json">{"titleTemplate":"","title":"The Hungry Series"}</script></head><body><div id="__nuxt"><div class="v-locale-provider v-locale--is-ltr" style=""><!--[--><div class="v-application v-theme--dark v-layout v-layout--full-height v-locale--is-ltr" style="--v-global-theme-primary:105,108,255;"><div class="v-application__wrap"><!--[--><div class="layout-wrapper layout-blank" data-allow-mismatch><!--[--><div class="landing-page-wrapper position-relative"><div class="intro-bg"></div><div class="video-container d-flex justify-center align-center"><video autoplay muted loop class="video-background image-blurred-edge"><source src="/hungryprod/videos/Banner_Cosmopino_Final_Web.webm" type="video/webm"> Your browser does not support the video tag. </video><i class="bx-downvote v-icon notranslate v-theme--dark v-icon--size-default arrow-down" style="" aria-hidden="true"></i></div><div class="v-responsive v-img v-img--booting v-parallax blurred-top" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><div class="v-responsive__content"><!--[--><div class="v-container v-locale--is-ltr" style=""><div class="v-row" style=""><div class="v-col" style=""><div class="position-relative" style="height:50vh;"></div></div></div><div class="v-row" style=""><div class="v-col v-col-12 position-relative" style=""><div class="v-responsive v-img v-img--booting mx-auto" style="height:180px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div></div><div class="v-row mb-12 text-white justify-center" style=""><div class="v-col v-col-12" style=""><div style="height:100px;"></div></div><div class="v-col-lg-9 v-col-xl-7 v-col-12 position-relative" style=""><h3 class="dawn mb-4">Cosmopino and the Hungry Ones – Prologue</h3><p> Earth is a miniscule plane of existence. Beyond our planet, beyond our galaxy, and further beyond the known cosmos, it all becomes incomprehensible. The universe is massive, with infinite dimensions and parallel realities well beyond human perception. Most people live their lives within their own tiny worlds. But a rare few are, through fate or chance, granted the ability to perceive beyond the ordinary. </p><div class="v-responsive v-img v-img--booting mt-2" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-row" style="margin-top:-30px;"><div class="v-col-md-6 v-col-12 pt-12" style=""><p> They are called the chosen ones. Or, more precisely, the <strong class="dawn">Hungry Ones</strong>. They are gifted cosmic seeds from the cosmic flowers - an otherworldly bloom at the heart of all the universes in the cosmos. They appear to those destined for them. Those born with the potential for cosmic sight. </p><div class="v-responsive v-img v-img--booting my-12" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-responsive v-img v-img--booting" style="height:320px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div></div><div class="v-row mb-6" style=""><div class="v-col-md-6 v-col position-relative" style=""><div class="v-responsive v-img v-img--booting" style="width:100%;position:absolute;top:-20px;left:0;z-index:10;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div><div class="v-col-md-6 v-col" style=""><p> But not all cosmic seeds are fated to bloom. Some live their entire lives unaware of their gift, for only a few feed the seed by nurturing their talents with dedication, turning them into something meaningful. Others will simply return to the astral plane and feed the cycle of death and rebirth into new seeds. </p><p> One of the Hungry Ones is a wandering artist named Pino, who will later come to be known as <strong class="sky">Cosmopino</strong>. </p></div></div><p> At the start of this story, Pino knows nothing of the cosmos. He is an artist, a traveler who expresses his emotions through his work. He does not seek fame or fortune, nor does he have a grand purpose. He simply wants to experience life, to understand the world in his own way. </p><p><strong style="color:#ea369d;"> Then, his cosmic eyes open. </strong></p><div class="v-responsive v-img v-img--booting" style="margin-top:-10px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-row mt-6" style=""><div class="v-col-md-6 v-col-12" style=""><p> Suddenly, Pino perceives reality&#39;s true nature. He discovers he&#39;s one among many, surrounded by others carrying the same cosmic potential—humans and animals alike. </p><p> His journey expands beyond Earth, traversing civilizations and encountering beings from across the universe. Some are friendly, others terrifyingly alien. Through these experiences, Pino understands his cosmic seed is both a gift and a responsibility. </p><p> But Pino is not a warrior. He is not a scholar. He is not a messiah meant to save the universe. He is an artist. And all he wants is to see as much of the cosmos as he can. To seek inspiration, to create, and to share his art with those who may need it. </p><p class="mt-12"> This is the beginning of his legend. This is the tale of <strong class="sky">Cosmopino</strong> and the <strong class="dawn">Hungry Ones</strong>. </p></div><div class="v-col-md-6 v-col-12" style=""><div class="v-responsive v-img v-img--booting" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div></div></div></div></div><div class="v-row" style=""><div class="v-col v-col-12 text-center" style=""><div class="v-responsive v-img v-img--booting mx-auto" style="height:400px;width:400px;margin-top:-20px;"><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><button type="button" class="v-btn v-btn--elevated v-theme--dark bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated" style="height:60px;"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><div class="v-list-item v-theme--dark v-list-item--density-default rounded-0 v-list-item--variant-text" style=""><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content" data-no-activator><!----><!----><!--[--><div class="v-list-item-title" style="">HOW HUNGRY ARE YOU?</div><div class="v-list-item-subtitle" style=""> Take the quiz (Coming Soon) </div><!--]--></div><!----></div><!--]--><!--]--></span><!----><!----></button><div class="mt-12"><p>Join our community</p><div class="d-flex justify-center gap-4"><a class="v-btn v-btn--elevated v-btn--icon v-theme--dark bg-white v-btn--density-default v-btn--size-default v-btn--variant-elevated" style="" href="https://x.com/ANYO_nft"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32" style="transform:scale(0.7);"><title>x</title><g fill="#212121"><polygon points="14.457 20.202 5.876 30 1.123 30 12.237 17.304 14.457 20.202" fill="#212121"></polygon><polygon points="17.051 10.988 24.908 2 29.658 2 19.251 13.902 17.051 10.988" fill="#212121"></polygon><path d="M31.488,30h-9.559L.512,2H10.313L31.488,30Zm-8.248-2.843h2.632L8.883,4.694h-2.824L23.241,27.157Z" fill="#212121"></path></g></svg><!--]--><!--]--></span><!----><!----></a><a class="v-btn v-btn--elevated v-btn--icon v-theme--dark bg-white v-btn--density-default v-btn--size-default v-btn--variant-elevated" style="" href="http://discord.gg/anyo-nft"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32" style="transform:scale(0.8);"><title>discord</title><g fill="#212121"><path d="M26.413,6.536c-1.971-.902-4.052-1.543-6.189-1.904-.292,.523-.557,1.061-.793,1.612-2.277-.343-4.592-.343-6.869,0-.236-.551-.5-1.089-.793-1.612-2.139,.365-4.221,1.006-6.194,1.909C1.658,12.336,.596,17.987,1.127,23.558h0c2.294,1.695,4.861,2.984,7.591,3.811,.615-.827,1.158-1.704,1.626-2.622-.888-.332-1.744-.741-2.56-1.222,.215-.156,.425-.316,.628-.472,4.806,2.26,10.37,2.26,15.177,0,.205,.168,.415,.328,.628,.472-.817,.483-1.676,.892-2.565,1.225,.467,.918,1.011,1.794,1.626,2.619,2.732-.824,5.301-2.112,7.596-3.808h0c.623-6.461-1.064-12.06-4.46-17.025Zm-15.396,13.596c-1.479,0-2.702-1.343-2.702-2.994s1.18-3.006,2.697-3.006,2.73,1.354,2.704,3.006-1.192,2.994-2.699,2.994Zm9.967,0c-1.482,0-2.699-1.343-2.699-2.994s1.18-3.006,2.699-3.006,2.723,1.354,2.697,3.006-1.189,2.994-2.697,2.994Z"></path></g></svg><!--]--><!--]--></span><!----><!----></a></div></div></div></div></div><!--]--></div></div></div><!--]--></div><span></span><!--]--></div></div><!--]--></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/hungryprod/_payload.json?713c1380-02e4-4bb2-a42d-07bb43ac4f52">[{"state":1,"once":4,"_errors":5,"serverRendered":7,"path":8,"pinia":9,"prerenderedAt":39},["Reactive",2],{"$snuxt-i18n-meta":3},{},["Set"],["ShallowReactive",6],{},true,"/",{"layoutConfig":10,"config":26},{"appContentWidth":11,"appContentLayoutNav":13,"navbarType":15,"isNavbarBlurEnabled":17,"isVerticalNavCollapsed":18,"horizontalNavType":20,"horizontalNavPopoverOffset":21,"footerType":23,"isAppRTL":25},["Ref",12],"boxed",["Ref",14],"vertical",["Ref",16],"sticky",["Ref",7],["EmptyRef",19],"false",["Ref",16],["Ref",22],6,["Ref",24],"static",["EmptyRef",19],{"theme":27,"isVerticalNavSemiDark":29,"skin":30,"appContentWidth":32,"navbarType":33,"isNavbarBlurEnabled":34,"appContentLayoutNav":35,"isVerticalNavCollapsed":36,"footerType":37,"isAppRTL":38},["Ref",28],"dark",["EmptyRef",19],["Ref",31],"default",["Ref",12],["Ref",16],["Ref",7],["Ref",14],["EmptyRef",19],["Ref",24],["EmptyRef",19],1743084677841]</script>
+<script>window.__NUXT__={};window.__NUXT__.config={public:{i18n:{baseUrl:"",defaultLocale:"",defaultDirection:"ltr",strategy:"prefix_except_default",lazy:false,rootRedirect:"",routesNameSeparator:"___",defaultLocaleRouteNameSuffix:"default",skipSettingLocaleOnNavigate:false,differentDomains:false,trailingSlash:false,locales:[],detectBrowserLanguage:{alwaysRedirect:false,cookieCrossOrigin:false,cookieDomain:"",cookieKey:"i18n_redirected",cookieSecure:false,fallbackLocale:"",redirectOn:"root",useCookie:true},experimental:{localeDetector:"",switchLocalePathLinkSSR:false,autoImportTranslationFunctions:false,typedPages:true,typedOptionsAndMessages:false,generatedLocaleFilePathFormat:"absolute"},multiDomainLocales:false},device:{defaultUserAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36",enabled:true,refreshOnResize:false}},app:{baseURL:"/hungryprod/",buildId:"713c1380-02e4-4bb2-a42d-07bb43ac4f52",buildAssetsDir:"/assets/",cdnURL:""}}</script></body></html>
