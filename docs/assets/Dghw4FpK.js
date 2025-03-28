@@ -1,0 +1,1 @@
+import{b as s,m as r,f as o,g as c,i as n,j as m}from"./Bjxdm-Qt.js";const p=s({opacity:[Number,String],...r(),...o()},"VCardText"),i=c()({name:"VCardText",props:p(),setup(e,t){let{slots:a}=t;return n(()=>m(e.tag,{class:["v-card-text",e.class],style:[{"--v-card-text-opacity":e.opacity},e.style]},a)),{}}});export{i as V};
